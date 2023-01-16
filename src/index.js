@@ -1,5 +1,6 @@
 import './css/styles.css';
 import { Notify } from 'notiflix';
+import axios from 'axios';
 const form = document.querySelector('#search-form');
 const input = form.elements.searchQuery;
 const gallery = document.querySelector('.gallery');
@@ -92,13 +93,11 @@ function renderMurkup(arr) {
 
 async function createFetsh(value, page, perPage) {
   try {
-    const resp = await fetch(
+    const resp = await axios.get(
       `https://pixabay.com/api/?key=32867517-775a58f450fa05e0fc64e3e7e&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${perPage}&page=${page}`
     );
-    if (!resp.ok) {
-      throw new Error(resp.statusText);
-    }
-    return await resp.json();
+    console.log(resp);
+    return await resp.data;
   } catch (error) {
     console.log('error');
   }
