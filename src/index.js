@@ -29,39 +29,39 @@ function onSearch(event) {
   createGallery(page);
   // form.reset();
 }
-function createGallery(page) {
-  createFetsh(input.value, page, perPage)
-    .then(data => {
-      totalHits = data.totalHits;
-      limit = totalHits / perPage;
-      if (totalHits) {
-        if (page === 1) {
-          Notify.info(`Hooray! We found ${totalHits} images.`);
-        }
-        console.log(page);
-        console.log(limit);
-        if (page > limit) {
-          Notify.info(
-            "We're sorry, but you've reached the end of search results."
-          );
-          return loadMore.classList.add('visually-hidden');
-        }
-
-        renderMurkup(data.hits);
-        loadMore.classList.remove('visually-hidden');
-      } else {
-        console.log('totalHits', totalHits);
-        loadMore.classList.add('visually-hidden');
-        Notify.failure(
-          'Sorry, there are no images matching your search query. Please try again.'
-        );
+async function createGallery(page) {
+  try {
+    const data = await createFetsh(input.value, page, perPage);
+    totalHits = data.totalHits;
+    limit = totalHits / perPage;
+    if (totalHits) {
+      if (page === 1) {
+        Notify.info(`Hooray! We found ${totalHits} images.`);
       }
-    })
-    .catch(
+      console.log(page);
+      console.log(limit);
+      if (page > limit) {
+        console.log('eckjdbt');
+
+        Notify.info(
+          "We're sorry, but you've reached the end of search results."
+        );
+        return loadMore.classList.add('visually-hidden');
+      }
+
+      renderMurkup(data.hits);
+      loadMore.classList.remove('visually-hidden');
+    } else {
+      loadMore.classList.add('visually-hidden');
       Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
-      )
+      );
+    }
+  } catch (error) {
+    Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
     );
+  }
 }
 
 function renderMurkup(arr) {
