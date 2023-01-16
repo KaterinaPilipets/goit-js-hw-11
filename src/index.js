@@ -32,7 +32,7 @@ function onSearch(event) {
 async function createGallery(page) {
   try {
     const data = await createFetsh(input.value, page, perPage);
-    console.log('data');
+    console.log(data);
     totalHits = data.totalHits;
     limit = totalHits / perPage;
     if (totalHits) {
