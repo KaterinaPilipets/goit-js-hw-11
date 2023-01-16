@@ -11,6 +11,8 @@ loadMore.classList.add('visually-hidden');
 let page = 0;
 let limit = 0;
 const perPage = 40;
+let totalHits = 0;
+
 form.addEventListener('submit', onSearch);
 loadMore.addEventListener('click', onLoadMore);
 function onLoadMore(event) {
