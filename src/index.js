@@ -1,7 +1,7 @@
 // import './css/styles.css';
 
 import { Notify } from 'notiflix';
-import axios from 'axios';
+import { createFetsh } from './fetchCountries';
 const form = document.querySelector('#search-form');
 const input = form.elements.searchQuery;
 const gallery = document.querySelector('.gallery');
@@ -29,11 +29,14 @@ function onSearch(event) {
   createGallery(page);
   // form.reset();
 }
+
 async function createGallery(page) {
   try {
     const data = await createFetsh(input.value, page, perPage);
+
     console.log(data);
     totalHits = data.totalHits;
+
     limit = totalHits / perPage;
     if (totalHits) {
       if (page === 1) {
@@ -89,12 +92,4 @@ function renderMurkup(arr) {
 
   //   webformatURL - ссылка на маленькое изображение для списка карточек.
   // largeImageURL - ссылка на большое изображение.
-}
-
-async function createFetsh(value, page, perPage) {
-  const resp = await axios.get(
-    `https://pixabay.com/api/?key=32867517-775a58f450fa05e0fc64e3e7e&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${perPage}&page=${page}`
-  );
-  console.log('resp.data', resp.data);
-  return await resp.data;
 }
