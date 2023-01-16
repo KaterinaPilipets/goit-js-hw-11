@@ -57,7 +57,8 @@ async function createGallery(page) {
       );
     }
   } catch (error) {
-    console('cash');
+    console.log(error);
+    console.log(data);
     Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
