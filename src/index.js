@@ -34,9 +34,8 @@ async function createGallery(page) {
   try {
     const data = await createFetsh(input.value, page, perPage);
 
-    console.log(data);
     totalHits = data.totalHits;
-
+    console.log(totalHits);
     limit = totalHits / perPage;
     if (totalHits) {
       if (page === 1) {
@@ -60,6 +59,7 @@ async function createGallery(page) {
       );
     }
   } catch (error) {
+    console.log(error);
     Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
