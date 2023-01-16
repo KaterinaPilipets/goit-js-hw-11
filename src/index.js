@@ -32,6 +32,7 @@ function onSearch(event) {
 async function createGallery(page) {
   try {
     const data = await createFetsh(input.value, page, perPage);
+    console.log('data');
     totalHits = data.totalHits;
     limit = totalHits / perPage;
     if (totalHits) {
@@ -41,8 +42,6 @@ async function createGallery(page) {
       console.log(page);
       console.log(limit);
       if (page > limit) {
-        console.log('eckjdbt');
-
         Notify.info(
           "We're sorry, but you've reached the end of search results."
         );
