@@ -69,7 +69,7 @@ async function createGallery(page) {
 }
 
 function renderMurkup(arr) {
-  gallery.innerHTML = arr
+  let murkup = arr
     .map(
       ({
         webformatURL,
@@ -91,6 +91,7 @@ function renderMurkup(arr) {
       }
     )
     .join('');
+  gallery.insertAdjacentHTML('beforeend', murkup);
 
   //   webformatURL - ссылка на маленькое изображение для списка карточек.
   // largeImageURL - ссылка на большое изображение.
