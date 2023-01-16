@@ -1,0 +1,139 @@
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  /* max-width: 100%; */
+  /* height: auto; */
+}
+
+.search-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: gray;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.search-input {
+  box-shadow: 0 5px 5px #777;
+  height: 20px;
+}
+
+.search-btn {
+  background-color: white;
+  height: 26px;
+  width: 26px;
+  padding: 0;
+  border-color: white;
+  box-shadow: 0 5px 5px #777;
+}
+
+.gallery {
+  margin-top: 30px;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.photo-img {
+  border-radius: 5px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.photo-card {
+  background-color: rgb(251, 248, 248);
+  display: block;
+  padding: 10px;
+  width: 250px;
+  /* border: 2px solid blue;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
+  box-shadow: 0 15px 10px #777;
+}
+
+.info {
+  line-height: 0, 8;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.load-more {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 26px;
+  box-shadow: 0 5px 5px #777;
+}
+
+
+/* .info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: calc((100% - 30px) / 4);
+} */
+
+
+/* body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+} */
+
+/* #search-box {
+  font: inherit;
+  padding: 8px;
+  max-width: 320px;
+  margin-bottom: 16px;
+} */
+
+/* .country-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+} */
+
+/* .country-item {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+  line-height: 12px;
+} */
