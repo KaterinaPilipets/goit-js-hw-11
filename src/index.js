@@ -100,6 +100,6 @@ async function createFetsh(value, page, perPage) {
     }
     return await resp.json();
   } catch (error) {
-    console.log(error);
+    console.log('error');
   }
 }
