@@ -8,8 +8,8 @@ const gallery = document.querySelector('.gallery');
 const loadMore = document.querySelector('.load-more');
 loadMore.classList.add('visually-hidden');
 
-let page;
-let limit;
+let page = 0;
+let limit = 0;
 const perPage = 40;
 form.addEventListener('submit', onSearch);
 loadMore.addEventListener('click', onLoadMore);
