@@ -1,4 +1,5 @@
-import './css/styles.css';
+// import './css/styles.css';
+
 import { Notify } from 'notiflix';
 import axios from 'axios';
 const form = document.querySelector('#search-form');
