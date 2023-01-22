@@ -1,10 +1,14 @@
 import { Notify } from 'notiflix';
 import { createFetsh } from './fetch';
-
+import SimpleLightbox from 'simplelightbox';
+// Дополнительный импорт стилей
+import 'simplelightbox/dist/simple-lightbox.min.css';
 const form = document.querySelector('#search-form');
 const input = form.elements.searchQuery;
 const gallery = document.querySelector('.gallery');
 const loadMore = document.querySelector('.load-more');
+
+let galleryLightbox = new SimpleLightbox('.gallery a');
 
 let page = 0;
 let limit = 0;
@@ -51,6 +55,7 @@ async function createGallery(page) {
       return loadMore.classList.add('visually-hidden');
     }
     renderMurkup(data.hits);
+    galleryLightbox.refresh();
     loadMore.classList.remove('visually-hidden');
   } catch (error) {
     Notify.failure(
